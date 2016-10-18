@@ -3,9 +3,12 @@
 
 Used a React/Redux/Webpack boilerplate called "react-redux-starter-kit" .  Below is the instructions on how to install, develop and deploy the web app.  Please let me know if you have any issues installing and running.
 
-Also, I made use of the great redux-form library.  
+Also, I made use of the great redux-form library.  The View component starts in /routes/UPCEntry.
+
+The only remaining issue was the CORS error I was getting when I tried to call the API from my app.  Please let me know if you can fix that so I can run some more testing.  
 
 Thank you,
+
 Anish
 
 

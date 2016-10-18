@@ -25,7 +25,7 @@ const renderUPCList = ({ fields, meta: { touched, error } }) => {
             </div>
             <div className='rowButtons'>
               <FontAwesome onClick={() => fields.push({})} name='plus' />
-              <FontAwesome className={index === 0 && 'disabled'} onClick={() => fields.push({})} name='minus'
+              <FontAwesome className={index === 0 && 'disabled'} name='minus'
                 onClick={index !== 0 && (() => fields.remove(index))} />
             </div>
           </div>
@@ -33,6 +33,11 @@ const renderUPCList = ({ fields, meta: { touched, error } }) => {
     )}
     </div>
 )
+}
+
+renderUPCList.propTypes = {
+  fields: React.PropTypes.array,
+  meta: React.PropTypes.object
 }
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
@@ -44,8 +49,15 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   </div>
 )
 
+renderField.propTypes = {
+  input: React.PropTypes.element,
+  label: React.PropTypes.string,
+  type: React.PropTypes.string,
+  meta: React.PropTypes.object
+}
+
 const FieldArraysForm = (props) => {
-  const { error, handleSubmit, invalid, pristine, reset, submitting } = props
+  const { error, handleSubmit, invalid, submitting } = props
   return (
     <div>
       <h1>UPC Data Entry</h1>
@@ -58,6 +70,13 @@ const FieldArraysForm = (props) => {
       </form>
     </div>
   )
+}
+
+FieldArraysForm.propTypes = {
+  error: React.PropTypes.string,
+  handleSubmit: React.PropTypes.func,
+  invalid: React.PropTypes.bool,
+  submitting: React.PropTypes.bool
 }
 
 export default reduxForm({
