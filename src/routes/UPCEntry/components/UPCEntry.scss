@@ -1,0 +1,48 @@
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  background-color: rgba(grey, .1);
+
+  &:disabled {
+    color: white;
+  }
+}
+
+.error {
+  color: red;
+  display: block;
+  span {
+    float: left;
+  }
+}
+
+.inputRow {
+  margin: 10px 0;
+  display: inline-block;
+  .inputRowField, .rowButtons{
+    float: left;
+    input {
+      width: 200px;
+    }
+  }
+  .rowButtons {
+    line-height: 50px;
+    font-size: 26px;
+    span {
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    .fa-plus {
+      color: green;
+    }
+    .fa-minus {
+      color: red
+    }
+    .fa-minus.disabled {
+      color: rgba(red, .1);
+      cursor: inherit;
+    }
+  }
+}
